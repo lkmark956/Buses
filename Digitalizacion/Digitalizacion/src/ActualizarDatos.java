@@ -15,7 +15,7 @@ public class ActualizarDatos {
 
         Random rand = new Random();
 
-        // Generar un delta velocidad distinto para cada bus
+        // Generar velocidades distintas para cada bus
         Map<String, Double> deltas = new HashMap<>();
         for (String busId : busesParaActualizar) {
             // delta entre -5 y +5
@@ -27,7 +27,7 @@ public class ActualizarDatos {
             if (busesParaActualizar.contains(d.getBusId())) {
                 double deltaVel = deltas.get(d.getBusId());
                 double nuevaVel = d.getSpeed() + deltaVel;
-                if (nuevaVel < 0) nuevaVel = 0; // No velocidad negativa
+                if (nuevaVel < 0) nuevaVel = 0; // Para que no exista una velocidad negativa
 
                 GPSData actualizado = new GPSData(d.getBusId(), d.getTimestamp(), d.getLatitude(), d.getLongitude(), nuevaVel);
                 datos.set(i, actualizado);

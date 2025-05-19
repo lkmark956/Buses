@@ -45,7 +45,6 @@ public class Interfaz extends JFrame {
                 "Actualizar Datos",
                 "Analizar Datos",
                 "Exportar JSON",
-                // "Ver Trayecto en el Mapa",  <-- Eliminado
                 "Salir"
         };
 
@@ -83,7 +82,6 @@ public class Interfaz extends JFrame {
             mostrarMensaje("Archivos JSON exportados.");
         });
 
-        // Ahora el botón "Salir" es el índice 4 porque eliminamos uno
         botones[4].addActionListener(e -> System.exit(0));
 
         return panelMenu;

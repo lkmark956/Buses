@@ -13,8 +13,8 @@ public class GPSDataSimulator {
 
         for (int i = 0; i < minutos; i++) {
             LocalDateTime timestamp = startTime.plusMinutes(i);
-            double speed = random.nextDouble() * 50; // 0 - 50 km/h
-            if (random.nextDouble() < 0.1) speed = 0; // 10% chance de parada
+            double speed = random.nextDouble() * 50;
+            if (random.nextDouble() < 0.1) speed = 0; // para las paradas
 
             lat += (random.nextDouble() - 0.5) / 1000;
             lon += (random.nextDouble() - 0.5) / 1000;
